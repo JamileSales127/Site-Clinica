@@ -4,13 +4,9 @@ body{
 }
 header{
     background-color:aqua;
+    text-decoration: none;
   
 }
-.topo{
-    color: white;
-    align-items: center;
-    max-width: 1024px;
-}
-section nav {
+header .links-topo a{
     text-decoration: none;
 }
