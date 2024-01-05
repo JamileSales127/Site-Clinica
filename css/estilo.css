@@ -1,12 +1,185 @@
-*{margin:0; padding:0;}
-body{
-    font-family: 'Source Sans Pro', sans-serif;
+/* Estilo Página Principal */
+
+#sobre, 
+#especialidades, 
+#contato {
+    padding: 40px, 20px, 0;  
+
 }
-header{
-    background-color:aqua;
+
+.secao-geral{
+    position: relative;
+    background-image: url(../Assets/recepcao.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 500px;
+}
+
+/* Vamos analisar cada propriedade:
+1. **`position: relative;`**
+   - Define a posição do elemento em relação ao seu próprio local original no layout da página. 
+   Ao definir como `relative`, você permite que outros elementos na mesma seção respeitem a posição original 
+   deste elemento.
+2. **`background-image: url(../Assets/recepcao.png);`**
+   - Define uma imagem de fundo para o elemento. Neste caso, 
+   a imagem está localizada no caminho `../Assets/recepcao.png`. 
+   Isso geralmente é usado para adicionar uma imagem de fundo à seção, e `url()` é 
+   usado para especificar o caminho para a imagem.
+3. **`background-size: cover;`**
+   - Essa propriedade define como a imagem de fundo deve ser dimensionada em relação ao contêiner. 
+   `cover` faz com que a imagem cubra todo o contêiner, mantendo a proporção e cortando partes da imagem 
+   se necessário para cobrir completamente a área.
+4. **`background-repeat: no-repeat;`**
+   - Impede que a imagem de fundo seja repetida. Se a imagem for menor que o contêiner, `no-repeat` garante 
+   que ela não seja repetida para preencher a área.
+ */
+
+.container-secao-geral{
+    height: 100%;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+/* 1.	display: flex;
+	Estabelece um contexto de layout flexível para os elementos filhos do contêiner. O layout flexível permite
+ fácil alinhamento e distribuição de itens dentro do contêiner.
+2.	align-items: center;
+	Centraliza os itens no eixo transversal (vertical) dentro do contêiner flexível. Neste caso, centraliza 
+verticalmente os elementos filhos do contêiner .container-secao-geral.
+ */
+
+.secao-geral h1{
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 38px;
+    margin: 0;
+}
+/* 1.	text-transform: uppercase;
+•	Transforma todo o texto para maiúsculas. Isso é útil quando você deseja garantir que o texto seja exibido
+ em letras maiúsculas, independentemente da forma como foi digitado.
+
+2.	margin: 0;
+•	Remove as margens padrão do elemento <h1>. Isso pode ser útil para garantir que não haja espaçamento 
+indesejado ao redor do texto.
+ */
+
+.container-secao-sobre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 1. **`display: flex;`**
+   - Estabelece um contexto de layout flexível para os elementos filhos do `.container-secao-sobre`. 
+   Ao usar `flex`, você pode controlar facilmente a distribuição e o alinhamento dos elementos filhos.
+2. **`justify-content: center;`**
+   - Centraliza os itens ao longo do eixo principal (horizontal) dentro do contêiner flexível. 
+   Neste caso, os elementos filhos serão centralizados horizontalmente.
+3. **`align-items: center;`**
+   - Centraliza os itens ao longo do eixo transversal (vertical) dentro do contêiner flexível. 
+   Combinado com `justify-content: center;`, isso centraliza os elementos filhos tanto vertical quanto ]
+   horizontalmente.
+•	Essas propriedades sugerem que o conteúdo dentro de `.container-secao-sobre` será centralizado tanto
+ horizontal quanto verticalmente. Isso é útil para garantir que os elementos dentro do contêiner estejam bem 
+ centralizados, independentemente do tamanho ou da quantidade de conteúdo. Geralmente, quando você usa 
+ `display: flex;` com `justify-content: center;` e `align-items: center;`, está buscando um layout onde os 
+ itens são centralizados em ambas as direções, o que é comum para blocos de conteúdo centralizados em uma 
+ página
+ */
+
+.container-secao-sobre h3{
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.container-secao-sobre img{
+    height: 200px;
+}
+
+.container-secao-especialidades2{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.figure-especialidades{
+    border-radius: 3px;
+    box-shadow: 0px 1px 10px rbg(0 0 0/ 50%);
+    margin: 20px;
+    width: calc(100%/3-40px);
+}
+/* box-shadow: 0px 1px 10px rbg(0 0 0/ 50%);
+
+Adiciona uma sombra ao elemento. Os valores significam:
+0px para deslocamento horizontal,
+1px para deslocamento vertical,
+10px para espalhamento da sombra,
+rgb(0 0 0 / 50%) para a cor da sombra, que é preta com 50% de opacidade.
+width: calc(100%/3 - 40px);
+
+Define a largura do elemento como 1/3 da largura do contêiner menos 40 pixels. calc() é usado 
+para calcular valores. Neste caso, a largura é ajustada para acomodar três desses elementos lado a lado, 
+com uma margem de 20 pixels em cada lado. */
+
+.figure-especialidades img{
+    width: 100%;
+}
+
+.figure-especialidades figcaption{
+    text-align: center;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+.container-link-horarios{
+    text-align: center;
+    margin-top: 20px;
+}
+.link-horario{
+    background-color: #00cad1;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 10px 20px;
     text-decoration: none;
-  
 }
-header .links-topo a{
-    text-decoration: none;
+
+@media (max-width: 1024px){
+    .secao-geral {height: 300px;}
+    .container-secao-sobre img {display: none;}
+    .container-secao-especialidades2 {justify-content: center;}
+    .figure-especialidades {width: calc(100%/2 - 40px);}
 }
+/* 
+1. **`@media (max-width: 1024px) {`**
+   - Esta é a declaração de uma media query. O código dentro das chaves `{}` será aplicado apenas quando a 
+   largura da tela for 1024 pixels ou menos.
+
+2. **`.secao-geral {height: 300px;}`**
+   - Reduz a altura da seção com a classe `.secao-geral` para 300 pixels quando a largura da tela for igual 
+   ou menor que 1024 pixels.
+
+3. **`.container-secao-sobre img {display: none;}`**
+   - Oculta as imagens dentro de elementos com a classe `.container-secao-sobre` quando a largura da tela for 
+   igual ou menor que 1024 pixels.
+
+4. **`.container-secao-especialidades2 {justify-content: center;}`**
+   - Centraliza os elementos dentro do contêiner com a classe `.container-secao-especialidades2` ao longo do 
+   eixo principal (horizontal) quando a largura da tela for igual ou menor que 1024 pixels.
+
+5. **`.figure-especialidades {width: calc(100%/2 - 40px);}`**
+   - Define a largura dos elementos com a classe `.figure-especialidades` como 1/2 da largura do contêiner 
+   menos 40 pixels, quando a largura da tela for igual ou menor que 1024 pixels. Isso é uma alteração 
+   em relação à regra fora da media query, que tinha 1/3 da largura do contêiner.
+
+Essas regras sugerem ajustes específicos para tornar o layout mais responsivo quando a largura da tela é 
+igual ou menor que 1024 pixels, garantindo que o design da página seja otimizado para telas menores. */
+
+@media (max-width:  425px){
+    .secao-geral{height: 200px;}
+    .secao-geral h1 {font-size: 28px;}
+    .figure-especialidades{width: 100%;}
+}
+/* Esta media query específica tem como alvo telas com uma largura máxima de 425 pixels.  */
